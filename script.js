@@ -33,17 +33,4 @@ function typeSkill() {
     }, 1500); // Wait for typing to finish
 }
 
-if (skillElement) {
-    typeSkill();
-}
-
-// Dark/Light Mode Toggle
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    if (document.body.classList.contains('light-mode')) {
-        themeToggle.textContent = '🌞 Light Mode';
-    } else {
-        themeToggle.textContent = '🌙 Dark Mode';
-    }
-});
+typeSkill();
