@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a1a3a 100%); /* Gradient background */
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a1a3a 100%);
     color: #fff;
     line-height: 1.6;
 }
