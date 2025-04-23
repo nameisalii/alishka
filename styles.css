@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
 }
 
+/* Container */
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -18,7 +19,7 @@ body {
 }
 
 /* Card Styles for Sections */
-.header-card, .intro-card, .section-card, .footer-card {
+.header-card, .intro-card, .section-card, .footer-card, .interest-card, .contact {
     background: rgba(30, 30, 30, 0.9);
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
@@ -109,14 +110,6 @@ body {
     white-space: nowrap;
 }
 
-.sub-skills {
-    font-size: 18px;
-    color: #b0b0b0;
-    margin-top: 15px;
-    font-style: italic;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
 /* Typing Animation for Skills */
 @keyframes typing {
     from { width: 0; }
@@ -128,13 +121,13 @@ body {
     to { width: 0; }
 }
 
-/* About Me Section */
+/* Interests Section */
 .section-card {
     padding: 60px 40px;
     margin-bottom: 60px;
 }
 
-.about-me h2, .projects h1 {
+.interests h1, .projects h1, .contact h1 {
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 30px;
@@ -144,42 +137,73 @@ body {
     animation: fadeIn 1s ease-in-out;
 }
 
-.accordion-btn {
-    background: linear-gradient(90deg, #6b21a8, #a855f7);
-    color: #fff;
-    padding: 15px 25px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 15px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+.interests p {
+    font-size: 18px;
+    color: #d0d0d0;
+    margin-bottom: 30px;
 }
 
-.accordion-btn:hover {
-    background: linear-gradient(90deg, #5b1a8d, #9333ea);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 
-.panel {
-    display: none;
+.interest-card {
     padding: 25px;
-    background: rgba(40, 40, 40, 0.9);
-    border-radius: 10px;
-    margin-bottom: 15px;
-    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.panel p {
+.interest-card h2 {
+    color: #a855f7;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.interest-card p, .interest-card ul {
     font-size: 16px;
     color: #d0d0d0;
     margin-bottom: 15px;
+}
+
+.interest-card ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.interest-card ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.interest-icon {
+    font-size: 20px;
+}
+
+.interest-links a {
+    color: #a855f7;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.interest-links a:hover {
+    color: #d8b4fe;
+}
+
+.sport-photo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #a855f7;
 }
 
 .photos {
@@ -261,6 +285,114 @@ body {
     color: #d8b4fe;
 }
 
+/* Contact Section */
+.contact-grid {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.contact-image {
+    flex: 1;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.contact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.image-overlay h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.image-overlay p {
+    font-size: 16px;
+    color: #d0d0d0;
+}
+
+.contact-form {
+    flex: 1;
+    background: rgba(40, 40, 40, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #d0d0d0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, #6b21a8, #a855f7);
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(90deg, #5b1a8d, #9333ea);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
 /* Footer */
 .footer-card {
     text-align: center;
@@ -271,21 +403,4 @@ body {
     display: flex;
     justify-content: center;
     gap: 25px;
-    margin-bottom: 15px;
-}
-
-.footer-card a {
-    color: #d0d0d0;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.footer-card a:hover {
-    color: #a855f7;
-}
-
-.footer-card p {
-    font-size: 14px;
-    color: #b0b0b0;
-}
+    margin
