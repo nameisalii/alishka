@@ -3,61 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me - Mukhammadzhon (ALI)</title>
+    <title>Contact - Mukhammadzhon (ALI)</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <header>
+        <!-- Dark/Light Mode Toggle -->
+        <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
+
+        <!-- Header Section -->
+        <header class="header-card">
             <div class="left-header">
-                <a href="index.html"><h2>Ali 💻 🇰🇬</h2></a>
+                <a href="index.html"><h2><span class="icon">💻</span> Ali 🇰🇬</h2></a>
             </div>
             <nav class="right-header">
-                <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">Resume</a>
-                <a href="interests.html">Interests</a>
-                <a href="projects.html">Projects</a>
-                <a href="https://github.com/nameisalii" target="_blank">Github</a>
-                <a href="contact.html">Contact</a>
+                <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank"><span class="icon">📄</span> Resume</a>
+                <a href="interests.html"><span class="icon">🌟</span> Interests</a>
+                <a href="projects.html"><span class="icon">🚀</span> Projects</a>
+                <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
+                <a href="contact.html"><span class="icon">📧</span> Contact</a>
             </nav>
         </header>
 
-        <section class="contact">
-            <div class="contact-left">
-                <h1>Let's Connect</h1>
-                <p>I'm always open to new opportunities, collaborations, or just a friendly chat about Machine Learning and Data Science. Feel free to reach out through the form or connect with me on social media.</p>
-                <img src="contact-photo.jpg" alt="A photo of Ali working on a project">
-                <div class="social-links">
-                    <a href="https://www.instagram.com/nameisali.ms/" target="_blank" class="social-icon instagram"></a>
-                    <a href="https://t.me/nameisalims_org" target="_blank" class="social-icon telegram"></a>
-                    <a href="https://www.linkedin.com/in/mukhammadzhon-sirozhdinov-702a11232/" target="_blank" class="social-icon linkedin"></a>
+        <!-- Contact Section -->
+        <section class="contact section-card">
+            <h1>Contact Me</h1>
+            <div class="contact-grid">
+                <div class="contact-image">
+                    <img src="images/contact-bg.jpg" alt="Contact Background">
+                    <div class="image-overlay">
+                        <h2>Contact Me</h2>
+                        <p>I'm always open to new opportunities, collaborations, or just a friendly chat about Machine Learning and Data Science.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="contact-right">
-                <form action="https://formspree.io/f/your-form-id" method="POST">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <input type="hidden" name="_subject" value="New Contact Form Submission">
-                    <input type="hidden" name="_next" value="http://yourdomain.com/thank-you.html">
-                    <button type="submit">Send Message</button>
-                </form>
+                <div class="contact-form">
+                    <form>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
             </div>
         </section>
 
-        <footer>
+        <!-- Footer -->
+        <footer class="footer-card">
             <nav>
-                <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">Resume</a>
-                <a href="interests.html">Interests</a>
-                <a href="projects.html">Projects</a>
-                <a href="https://github.com/nameisalii" target="_blank">Github</a>
-                <a href="contact.html">Contact</a>
-                <a href="#" class="more">More</a>
+                <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank"><span class="icon">📄</span> Resume</a>
+                <a href="interests.html"><span class="icon">🌟</span> Interests</a>
+                <a href="projects.html"><span class="icon">🚀</span> Projects</a>
+                <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
+                <a href="contact.html"><span class="icon">📧</span> Contact</a>
             </nav>
             <p>© 2025 Mukhammadzhon (ALI)</p>
         </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
