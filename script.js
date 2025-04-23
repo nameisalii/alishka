@@ -16,7 +16,7 @@ document.querySelectorAll('.accordion-btn').forEach(button => {
 });
 
 // Typing Animation for Skills
-const skills = ["Machine Learning", "Data Science", "Engineering", "Designing", "developing", "Deep Learning", "UI/UX"];
+const skills = ["Data Science", "Machine Learning", "Engineering", "Designing", "developing", "Deep Learning", "UI/UX"];
 let currentSkillIndex = 0;
 const skillElement = document.querySelector('.skill-highlight');
 
@@ -33,4 +33,17 @@ function typeSkill() {
     }, 1500); // Wait for typing to finish
 }
 
-typeSkill();
+if (skillElement) {
+    typeSkill();
+}
+
+// Dark/Light Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    if (document.body.classList.contains('light-mode')) {
+        themeToggle.textContent = '🌞 Light Mode';
+    } else {
+        themeToggle.textContent = '🌙 Dark Mode';
+    }
+});
