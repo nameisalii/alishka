@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <!-- Font Awesome for social media and nav icons -->
+    <!-- Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         body {
@@ -12,61 +12,11 @@
             background-color: #1a1a1a;
             color: #fff;
             margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Navigation Bar */
-        nav {
-            background-color: #1a1a1a;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            position: relative;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px; /* Increased spacing between links */
-        }
-
-        .nav-links a {
-            color: #fff; /* Changed text color to white */
-            text-decoration: none;
-            font-size: 1.2em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #a855f7; /* Purple on hover */
-        }
-
-        .nav-links i {
-            font-size: 1.2em;
-        }
-
-        .copyright {
-            font-size: 0.9em;
-            color: #fff;
-            margin-top: 10px;
-            text-align: center;
-            width: 100%;
-        }
-
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
@@ -83,7 +33,7 @@
 
         .left-section h1 {
             font-size: 3em;
-            color: #a855f7;
+            color: #a855f7; /* Purple to match the theme */
             margin-bottom: 10px;
         }
 
@@ -105,18 +55,18 @@
             align-items: center;
             width: 50px;
             height: 50px;
-            background-color: #a855f7;
-            border-radius: 50%;
+            background-color: #a855f7; /* Purple background */
+            border-radius: 50%; /* Circular shape */
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
 
         .social-buttons a:hover {
-            background-color: #7e3af2;
+            background-color: #7e3af2; /* Slightly darker purple on hover */
         }
 
         .social-buttons i {
-            color: #fff;
+            color: #fff; /* White icons */
             font-size: 1.5em;
         }
 
@@ -170,58 +120,42 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-links">
-            <a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a>
-            <a href="interests.html"><i class="fas fa-star"></i> Interests</a>
-            <a href="projects.html"><i class="fas fa-rocket"></i> Projects</a>
-            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> Github</a>
-            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-        </div>
-        <div class="copyright">
-            © 2025 Mukhammadzhon (ALI)
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="main-content">
-        <div class="container">
-            <div class="left-section">
-                <h1>Contact Me</h1>
-                <p>
-                    I’m always open to new opportunities, collaborations, or just a
-                    friendly chat about Machine Learning and Data Science.
-                </p>
-                <div class="social-buttons">
-                    <a href="https://www.instagram.com/nameisali.ms/" target="_blank" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/mukhammadzhon-sirozhdinov-702a11232/" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://t.me/nameisalims_org" target="_blank" title="Telegram">
-                        <i class="fab fa-telegram-plane"></i>
-                    </a>
-                </div>
+    <div class="container">
+        <div class="left-section">
+            <h1>Contact Me</h1>
+            <p>
+                I’m always open to new opportunities, collaborations, or just a
+                friendly chat about Machine Learning and Data Science.
+            </p>
+            <!-- Social Media Buttons -->
+            <div class="social-buttons">
+                <a href="https://www.instagram.com/nameisali.ms/" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mukhammadzhon-sirozhdinov-702a11232/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://t.me/nameisalims_org" target="_blank" title="Telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
             </div>
-            <div class="contact-form">
-                <form>
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+        <div class="contact-form">
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Your Email" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your Email" required>
 
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" placeholder="Subject">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Subject">
 
-                    <label for="message">Message</label>
-                    <textarea id="message" placeholder="Your Message" required></textarea>
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Your Message" required></textarea>
 
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
 </body>
