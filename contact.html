@@ -3,66 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Mukhammadzhon (ALI)</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Contact Me</title>
+    <!-- Font Awesome for social media and nav icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px; /* Increased spacing between links */
+        }
+
+        .nav-links a {
+            color: #fff; /* Changed text color to white */
+            text-decoration: none;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #a855f7; /* Purple on hover */
+        }
+
+        .nav-links i {
+            font-size: 1.2em;
+        }
+
+        .copyright {
+            font-size: 0.9em;
+            color: #fff;
+            margin-top: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .left-section {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .left-section h1 {
+            font-size: 3em;
+            color: #a855f7;
+            margin-bottom: 10px;
+        }
+
+        .left-section p {
+            font-size: 1em;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        .social-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-buttons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: #a855f7;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-buttons a:hover {
+            background-color: #7e3af2;
+        }
+
+        .social-buttons i {
+            color: #fff;
+            font-size: 1.5em;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: #2a2a2a;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3a3a3a;
+            color: #ccc;
+            font-size: 1em;
+        }
+
+        .contact-form textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #a855f7;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #7e3af2;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <header class="header-card">
-            <div class="left-header">
-                <a href="index.html"><h2><span class="icon">💻</span> Ali 🇰🇬</h2></a>
-            </div>
-            <nav class="right-header">
-                <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank"><span class="icon">📄</span> Resume</a>
-                <a href="interests.html"><span class="icon">🌟</span> Interests</a>
-                <a href="projects.html"><span class="icon">🚀</span> Projects</a>
-                <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
-                <a href="contact.html"><span class="icon">📧</span> Contact</a>
-            </nav>
-        </header>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-links">
+            <a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a>
+            <a href="interests.html"><i class="fas fa-star"></i> Interests</a>
+            <a href="projects.html"><i class="fas fa-rocket"></i> Projects</a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> Github</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <div class="copyright">
+            © 2025 Mukhammadzhon (ALI)
+        </div>
+    </nav>
 
-        <!-- Contact Section -->
-        <section class="contact section-card">
-            <h1>Contact Me</h1>
-            <div class="contact-grid">
-                <div class="contact-image">
-                    <img src="images/contact-bg.jpg" alt="Contact Background">
-                    <div class="image-overlay">
-                        <h2>Contact Me</h2>
-                        <p>I'm always open to new opportunities, collaborations, or just a friendly chat about Machine Learning and Data Science.</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="submit-btn">Submit</button>
-                    </form>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="left-section">
+                <h1>Contact Me</h1>
+                <p>
+                    I’m always open to new opportunities, collaborations, or just a
+                    friendly chat about Machine Learning and Data Science.
+                </p>
+                <div class="social-buttons">
+                    <a href="https://www.instagram.com/nameisali.ms/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mukhammadzhon-sirozhdinov-702a11232/" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://t.me/nameisalims_org" target="_blank" title="Telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
                 </div>
             </div>
-        </section>
+            <div class="contact-form">
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
 
-        <!-- Footer -->
-        <footer class="footer-card">
-            <nav>
-                <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank"><span class="icon">📄</span> Resume</a>
-                <a href="interests.html"><span class="icon">🌟</span> Interests</a>
-                <a href="projects.html"><span class="icon">🚀</span> Projects</a>
-                <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
-                <a href="contact.html"><span class="icon">📧</span> Contact</a>
-            </nav>
-            <p>© 2025 Mukhammadzhon (ALI)</p>
-        </footer>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your Email" required>
+
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Subject">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
