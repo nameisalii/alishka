@@ -1,22 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <header class="header-card">
-            <div class="left-header">
-                <a href="index.html"><h2><span class="icon">💻</span> Ali🇰🇬 </h2></a>
-            </div>
-            <nav class="right-header">
-                <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank"><span class="icon">📄</span> Resume</a>
-                <a href="interests.html"><span class="icon">🌟</span> Interests</a>
-                <a href="projects.html"><span class="icon">🚀</span> Projects</a>
-                <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
-                <a href="contact.html"><span class="icon">📧</span> Contact</a>
-            </nav>
-        </header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <!-- Font Awesome for social media icons -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         body {
@@ -24,11 +12,70 @@
             background-color: #1a1a1a;
             color: #fff;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header-card {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .left-header a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .left-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .left-header .icon {
+            font-size: 1.2em;
+            color: #a855f7; /* Purple icon */
+        }
+
+        .right-header {
+            display: flex;
+            gap: 30px; /* Spacing between nav links */
+        }
+
+        .right-header a {
+            color: #fff; /* Changed to white */
+            text-decoration: none;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .right-header a:hover {
+            color: #a855f7; /* Purple on hover */
+        }
+
+        .right-header .icon {
+            font-size: 1.2em;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            padding: 20px;
         }
 
         .container {
@@ -45,7 +92,7 @@
 
         .left-section h1 {
             font-size: 3em;
-            color: #a855f7; /* Purple to match the theme */
+            color: #a855f7;
             margin-bottom: 10px;
         }
 
@@ -67,18 +114,18 @@
             align-items: center;
             width: 50px;
             height: 50px;
-            background-color: #a855f7; /* Purple background */
-            border-radius: 50%; /* Circular shape */
+            background-color: #a855f7;
+            border-radius: 50%;
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
 
         .social-buttons a:hover {
-            background-color: #7e3af2; /* Slightly darker purple on hover */
+            background-color: #7e3af2;
         }
 
         .social-buttons i {
-            color: #fff; /* White icons */
+            color: #fff;
             font-size: 1.5em;
         }
 
@@ -129,46 +176,95 @@
         .contact-form button:hover {
             background-color: #7e3af2;
         }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .copyright {
+            font-size: 0.9em;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="left-section">
-            <h1>Contact Me</h1>
-            <p>
-                I’m always open to new opportunities, collaborations, or just a
-                friendly chat about Machine Learning and Data Science.
-            </p>
-            <!-- Social Media Buttons -->
-            <div class="social-buttons">
-                <a href="https://www.instagram.com/nameisali.ms/" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/mukhammadzhon-sirozhdinov-702a11232/" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://t.me/nameisalims_org" target="_blank" title="Telegram">
-                    <i class="fab fa-telegram-plane"></i>
-                </a>
+    <!-- Header -->
+    <header class="header-card">
+        <div class="left-header">
+            <a href="index.html">
+                <h2>
+                    <span class="icon"><i class="fas fa-laptop"></i></span> Ali🇰🇬
+                </h2>
+            </a>
+        </div>
+        <nav class="right-header">
+            <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">
+                <span class="icon"><i class="fas fa-file-alt"></i></span> Resume
+            </a>
+            <a href="interests.html">
+                <span class="icon"><i class="fas fa-star"></i></span> Interests
+            </a>
+            <a href="projects.html">
+                <span class="icon"><i class="fas fa-rocket"></i></span> Projects
+            </a>
+            <a href="https://github.com/nameisalii" target="_blank">
+                <span class="icon"><i class="fab fa-github"></i></span> Github
+            </a>
+            <a href="contact.html">
+                <span class="icon"><i class="fas fa-envelope"></i></span> Contact
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="left-section">
+                <h1>Contact Me</h1>
+                <p>
+                    I’m always open to new opportunities, collaborations, or just a
+                    friendly chat about Machine Learning and Data Science.
+                </p>
+                <div class="social-buttons">
+                    <a href="https://www.instagram.com/nameisali.ms/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mukhammadzhon-sirozhdinov-702a11232/" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://t.me/nameisalims_org" target="_blank" title="Telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your Email" required>
+
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Subject">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </div>
-        <div class="contact-form">
-            <form>
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Your Name" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Your Email" required>
-
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" placeholder="Subject">
-
-                <label for="message">Message</label>
-                <textarea id="message" placeholder="Your Message" required></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
-        </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="copyright">
+            © 2025 Mukhammadzhon (ALI)
+        </div>
+    </footer>
 </body>
 </html>
