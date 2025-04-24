@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome for icons (used in social buttons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         body {
@@ -41,18 +41,18 @@
             gap: 8px;
         }
 
-        .left-header .icon {
-            font-size: 1.2em;
-            color: #a855f7; /* Purple icon */
+        .left-header .emoji {
+            font-size: 1em; /* Adjust emoji size */
+            color: initial; /* Ensure natural emoji colors */
         }
 
         .right-header {
             display: flex;
-            gap: 30px; /* Spacing between nav links */
+            gap: 30px;
         }
 
         .right-header a {
-            color: #fff; /* Changed to white */
+            color: #fff;
             text-decoration: none;
             font-size: 1.2em;
             display: flex;
@@ -62,11 +62,22 @@
         }
 
         .right-header a:hover {
-            color: #a855f7; /* Purple on hover */
+            color: #a855f7;
         }
 
-        .right-header .icon {
-            font-size: 1.2em;
+        .right-header .emoji-bg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px; /* Adjust size of the background shape */
+            height: 30px;
+            background-color: #3a3a3a; /* Subtle gray background */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        .right-header .emoji-bg .emoji {
+            font-size: 1em; /* Adjust emoji size */
+            color: initial; /* Ensure natural emoji colors */
         }
 
         /* Main Content */
@@ -196,25 +207,25 @@
         <div class="left-header">
             <a href="index.html">
                 <h2>
-                    Ali <span class="emoji">🇰🇬💻</span>
+                    ALI <span class="emoji">🇰🇬💻</span>
                 </h2>
             </a>
         </div>
         <nav class="right-header">
             <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">
-                <span class="emoji">📄</span> Resume
+                <span class="emoji-bg"><span class="emoji">📄</span></span> Resume
             </a>
             <a href="interests.html">
-                <span class="emoji">🌟</span> Interests
+                <span class="emoji-bg"><span class="emoji">🌟</span></span> Interests
             </a>
             <a href="projects.html">
-                <span class="emoji">🚀</span> Projects
+                <span class="emoji-bg"><span class="emoji">🚀</span></span> Projects
             </a>
             <a href="https://github.com/nameisalii" target="_blank">
-                <span class="emoji">🐙</span> Github
+                <span class="emoji-bg"><span class="emoji">🐙</span></span> Github
             </a>
             <a href="contact.html">
-                <span class="emoji">📧</span> Contact
+                <span class="emoji-bg"><span class="emoji">📧</span></span> Contact
             </a>
         </nav>
     </header>
