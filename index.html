@@ -3,23 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mukhammadzhon (Ali) Sirozhdinov</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Home - Ali</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header-card {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .left-header {
+            background-color: rgba(168, 85, 247, 0.2); /* Semi-transparent purple */
+            padding: 8px 15px;
+            border-radius: 15px; /* Rounded corners */
+            backdrop-filter: blur(5px); /* Blur effect */
+        }
+
+        .left-header a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .left-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .left-header .emoji {
+            font-size: 1em; /* Adjust emoji size */
+            color: initial; /* Ensure natural emoji colors */
+        }
+
+        .right-header {
+            background-color: rgba(168, 85, 247, 0.2); /* Semi-transparent purple */
+            padding: 8px 15px;
+            border-radius: 15px; /* Rounded corners */
+            backdrop-filter: blur(5px); /* Blur effect */
+            display: flex;
+            gap: 30px;
+        }
+
+        .right-header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .right-header a:hover {
+            color: #a855f7;
+        }
+
+        .right-header .emoji {
+            font-size: 1em; /* Adjust emoji size */
+            color: initial; /* Ensure natural emoji colors */
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .intro-heading {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .intro-heading span {
+            display: inline;
+        }
+
+        .highlight {
+            color: #a855f7;
+        }
+
+        /* About Me Section */
+        .about-me {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .about-me h2 {
+            font-size: 2em;
+            color: #a855f7;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #a855f7;
+            display: inline-block;
+        }
+
+        .about-me-content {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .about-me-info {
+            flex: 1;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .about-me-info p {
+            font-size: 1em;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        .about-me-photo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-me-photo img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        /* Collapsible Sections */
+        details {
+            margin-bottom: 15px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        summary {
+            font-size: 1.2em;
+            color: #a855f7;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        details p {
+            font-size: 1em;
+            color: #ccc;
+            line-height: 1.5;
+            padding: 0 10px 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .copyright {
+            font-size: 0.9em;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Dark/Light Mode Toggle -->
-        <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
-
-        <!-- Header Section -->
-     <header class="header-card">
+    <!-- Header -->
+    <header class="header-card">
         <div class="left-header">
-             <a href="index.html">
-                 <h2>
-                     Ali <span class="emoji">🇰🇬💻</span>
-                 </h2>
-             </a>
+            <a href="index.html">
+                <h2>
+                    ALI <span class="emoji">🇰🇬💻</span>
+                </h2>
+            </a>
         </div>
         <nav class="right-header">
             <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">
@@ -40,48 +226,60 @@
         </nav>
     </header>
 
-        <!-- Main Introduction -->
-        <section class="intro intro-card">
-            <h1 class="typing-effect">
-                Hi, I'm <span class="highlight">Mukhammadzhon (Ali)</span><br>
-                I'm master on <span class="skill-highlight">Data Science </span></br>
-        </section>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="intro-heading">
+                <span>Hi, I’m Mukhammadzhon (ALI)</span>
+                <span>I’m master on |</span>
+                <br>
+                <span class="highlight">Engineering</span>
+            </div>
+        </div>
 
-        <!-- Projects Section -->
-        <section class="projects section-card">
-            <h1>Projects</h1>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h2>Diamond</h2>
-                    <p><strong>Machine Learning model with MSE 99%</strong></p>
-                    <p>This model’s main point is to suggest the diamonds to Steve based on his preference and predict the price of the diamond.</p>
-                    <p>It was built by: Python, Data Analysis, and ML</p>
-                    <img src="images/diamond-project.jpg" alt="Diamond Project Visualization">
-                    <div class="project-links">
-                        <a href="https://github.com/nameisalii" target="_blank">Github</a>
-                        <a href="#" target="_blank">Website</a>
-                    </div>
+        <!-- About Me Section -->
+        <div class="about-me">
+            <h2>About Me</h2>
+            <div class="about-me-content">
+                <div class="about-me-info">
+                    <p>
+                        I’m Mukhammadzhon (ALI), a passionate engineer with a focus on Machine Learning and Data Science. Originally from Kyrgyzstan, I’ve recently moved to the USA to pursue my dreams in technology. I’m driven by a desire to create impactful EdTech and FinTech solutions that empower people to discover their potential. When I’m not coding, you can find me exploring new cultures, learning from others, or enjoying a good football match!
+                    </p>
                 </div>
-                <div class="project-card">
-                    <h2>Predict Podcast Listening Time</h2>
-                    <p>I created a ML model that predicts the time of listening to podcasts using LightGBM and XGBoost on Kaggle and got 11.9 top 200.</p>
-                    <img src="images/podcast-project.jpg" alt="Podcast Project Visualization">
+                <div class="about-me-photo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Jude_Bellingham_2023_%28cropped%29.jpg" alt="Jude Bellingham">
                 </div>
             </div>
-        </section>
 
-        <!-- Footer -->
-        <footer class="footer-card">
-            <nav>
-                <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank"><span class="icon">📄</span> Resume</a>
-                <a href="interests.html"><span class="icon">🌟</span> Interests</a>
-                <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
-                <a href="contact.html"><span class="icon">📧</span> Contact</a>
-            </nav>
-            <p>© 2025 Mukhammadzhon (Ali)</p>
-        </footer>
+            <!-- Collapsible Sections -->
+            <details>
+                <summary>Where I Came From</summary>
+                <p>
+                    I was born in Kyzyl-Kiya and raised in Uckurgon, two vibrant hometowns filled with love, beauty, and warm-hearted people. My family wasn’t wealthy in terms of money, but we were rich in faith, values, and kindness. From a young age, my parents taught me to pursue my dreams, be respectful, and treat everyone with compassion. As the youngest child, I was full of energy—sometimes a bit too much! I attended the same school as my siblings, where I excelled academically, often earning straight A’s, but I wasn’t afraid to roughhouse with the boys after class. I was both the “good kid” and the mischievous one (haha). The school’s rigorous education system, where I studied for 11 years, built a strong foundation for my future.
+                </p>
+            </details>
+
+            <details>
+                <summary>Where I Am Right Now</summary>
+                <p>
+                    I arrived in Bellevue, USA, on August 30, 2024, to pursue my dreams. The transition was challenging at first—I struggled with homesickness and wondered if this path was right for me. However, I persevered and found an incredible group of friends who have supported me in life, education, and my career. Their encouragement helped me settle in and thrive.
+                </p>
+            </details>
+
+            <details>
+                <summary>Where I Want to Go</summary>
+                <p>
+                    My goal isn’t simply to land an IT job at a big company—that’s a milestone, not my ultimate dream. Instead, I aspire to build EdTech and FinTech startups that empower people to unlock their potential early in life. I believe everyone has unique talents, but not everyone gets the chance to discover them. I want to be the person who helps even just one individual transform their life by finding their purpose.
+                </p>
+            </details>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="copyright">
+            © 2025 Mukhammadzhon (ALI)
+        </div>
+    </footer>
 </body>
 </html>
