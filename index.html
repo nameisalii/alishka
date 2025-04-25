@@ -19,7 +19,7 @@
         }
 
         body.light-mode {
-            background-color: #f5f5f5; /* Soft light gray for light mode */
+            background-color: #f5f5f5;
             color: #333;
         }
 
@@ -59,16 +59,14 @@
             flex-wrap: wrap;
             width: 100%;
             max-width: 1200px;
+            margin-bottom: 40px; /* Added space after header */
         }
 
         body.light-mode .header-card {
-            background-color: #f5f5f5; /* Match body background in light mode */
+            background-color: #f5f5f5;
         }
 
         .header-content {
-            background-color: #000; /* Single black shape for the entire header */
-            padding: 8px 15px;
-            border-radius: 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -77,8 +75,7 @@
         }
 
         body.light-mode .header-content {
-            background-color: #ffffff; /* White background in light mode */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            box-shadow: none; /* Remove shadow in light mode since there's no shape */
         }
 
         .left-header {
@@ -130,14 +127,13 @@
         }
 
         .right-header a:hover {
-            background-color: #a855f7; /* Purple shape on hover */
+            background-color: #a855f7;
         }
 
         body.light-mode .right-header a:hover {
-            background-color: #e0b7ff; /* Lighter purple in light mode */
+            background-color: #e0b7ff;
         }
 
-        /* Remove default background for "Interests" */
         .right-header a.interests {
             background-color: transparent;
         }
@@ -173,13 +169,13 @@
         /* Intro Section */
         .intro-card {
             text-align: left;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* Increased space after intro section */
             width: 100%;
             max-width: 1200px;
         }
 
         .intro-card h1 {
-            font-size: 2.5em;
+            font-size: 3em; /* Increased font size */
             margin: 0;
         }
 
@@ -188,7 +184,7 @@
         }
 
         body.light-mode .intro-card .highlight {
-            color: #7e3af2; /* Slightly darker purple for light mode */
+            color: #7e3af2;
         }
 
         .intro-card .skill-highlight {
@@ -202,6 +198,7 @@
         /* Projects Section */
         .projects {
             margin-top: 40px;
+            margin-bottom: 60px; /* Added space after projects section */
             width: 100%;
             max-width: 1200px;
         }
@@ -235,7 +232,7 @@
         }
 
         body.light-mode .project-card {
-            background-color: #e6e6e6; /* Lighter background for harmony */
+            background-color: #e6e6e6;
         }
 
         .project-card:hover {
@@ -251,7 +248,7 @@
             font-size: 1em;
             color: #ccc;
             line-height: 1.5;
-            margin: 5px 0;
+ g           margin: 5px 0;
         }
 
         body.light-mode .project-card p {
@@ -293,6 +290,7 @@
         /* About Me Section */
         .about-me {
             margin-top: 40px;
+            margin-bottom: 60px; /* Added space after about-me section */
             width: 100%;
             max-width: 1200px;
         }
