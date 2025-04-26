@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 100vh">
     <title>Projects - Mukhammadzhon (ALI)</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
@@ -118,6 +118,86 @@
             width: 100%;
         }
 
+        /* Projects Section */
+        .projects {
+            margin-top: 40px;
+            margin-bottom: 60px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .projects h1 {
+            font-size: 2em;
+            color: #a855f7;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #a855f7;
+            display: inline-block;
+        }
+
+        .project-grid {
+            display: flex; /* Changed to flex for single-column layout */
+            flex-direction: column; /* Stack projects vertically */
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .project-card-content {
+            flex: 1;
+        }
+
+        .project-card h2 {
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 1em;
+            color: #ccc;
+            line-height: 1.5;
+            margin: 5px 0;
+        }
+
+        .project-card .highlight {
+            color: #f28c38;
+        }
+
+        .project-card img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .project-links {
+            margin-top: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-links a {
+            color: #a855f7;
+            text-decoration: none;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: #7e3af2;
+        }
+
         /* Footer */
         .footer-card {
             background-color: #1a1a1a;
@@ -165,35 +245,55 @@
             </div>
         </header>
 
-        <!-- Projects Section -->
-        <section class="projects section-card">
-            <h1>Projects</h1>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h2>Diamond</h2>
-                    <p><strong>Machine Learning model with MSE 99%</strong></p>
-                    <p>This model’s main point is to suggest the diamonds to Steve based on his preference and predict the price of the diamond.</p>
-                    <p>It was built by: Python, Data Analysis, and ML</p>
-                    <img src="images/diamond-project.jpg" alt="Diamond Project Visualization">
-                    <div class="project-links">
-                        <a href="https://github.com/nameisalii" target="_blank">Github</a>
-                        <a href="#" target="_blank">Website</a>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Projects Section -->
+            <section class="projects">
+                <h1>Projects</h1>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h2>Diamond</h2>
+                            <p>If you ever need a diamond recommendation, this <span class="highlight">Machine Learning model</span> with MSE 99% can help.</p>
+                            <p>This model suggests diamonds to Steve based on his preferences and predicts the price of the diamond.</p>
+                            <p>It was built using: <span class="highlight">Python</span>, Data Analysis, and ML.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
+                                <a href="#" target="_blank">Website (Placeholder - Add URL)</a>
+                            </div>
+                        </div>
+                        <img src="images/diamond-project.jpg" alt="Diamond Project Visualization">
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h2>Predict Podcast Listening Time</h2>
+                            <p>I created a <span class="highlight">ML model</span> that predicts the time spent listening to podcasts using <span class="highlight">LightGBM</span> and <span class="highlight">XGBoost</span> on Kaggle, achieving a score of 11.9 (top 200).</p>
+                            <div class="project-links">
+                                <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github (Placeholder - Add URL)</a>
+                            </div>
+                        </div>
+                        <img src="images/podcast-project.jpg" alt="Podcast Project Visualization">
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h2>Github Globe</h2>
+                            <p>If you ever visited Github’s homepage, you will notice a 3D globe that visualizes platform’s current activity.</p>
+                            <p>I decided to recreate it with <span class="highlight">ThreeJS</span> and make the project open-source. I built the Globe using Vasco Asturiano’s three-globe as base, shaded the 3D scene to resemble a dreamy space environment and bundled everything with <span class="highlight">Webpack</span>.</p>
+                            <p>Additionally, the Globe visualizes my flight history across the world from <span class="highlight">2019 to 2020</span>. So far, this is my most popular open-source project, with 35+ stars on Github.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/nameisalii/alishka" target="_blank"><span class="icon">🐙</span> Github</a>
+                            </div>
+                        </div>
+                        <img src="images/github-globe.jpg" alt="Github Globe Visualization">
                     </div>
                 </div>
-                <div class="project-card">
-                    <h2>Predict Podcast Listening Time</h2>
-                    <p>I created a ML model that predicts the time of listening to podcasts using LightGBM and XGBoost on Kaggle and got 11.9 top 200.</p>
-                    <img src="images/podcast-project.jpg" alt="Podcast Project Visualization">
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <!-- Footer -->
         <footer class="footer-card">
             <p>© 2025 Mukhammadzhon (ALI)</p>
         </footer>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
