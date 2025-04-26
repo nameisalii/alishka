@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <!-- Font Awesome for icons (used in social buttons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Contact - Mukhammadzhon (ALI)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
             background-color: #1a1a1a;
             color: #fff;
             margin: 0;
@@ -16,6 +15,18 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+        }
+
+        /* Container */
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         /* Header */
@@ -26,6 +37,22 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
         }
 
         .left-header a {
@@ -41,14 +68,14 @@
             gap: 8px;
         }
 
-        .left-header .emoji {
-            font-size: 1em; /* Adjust emoji size */
-            color: initial; /* Ensure natural emoji colors */
+        .left-header .icon {
+            font-size: 1em;
+            color: initial;
         }
 
         .right-header {
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
 
         .right-header a {
@@ -58,26 +85,26 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 15px;
+            transition: background-color 0.3s ease;
         }
 
         .right-header a:hover {
-            color: #a855f7;
+            background-color: #a855f7;
         }
 
-        .right-header .emoji-bg {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 30px; /* Adjust size of the background shape */
-            height: 30px;
-            background-color: #3a3a3a; /* Subtle gray background */
-            border-radius: 5px; /* Rounded corners */
+        .right-header a.interests {
+            background-color: transparent;
         }
 
-        .right-header .emoji-bg .emoji {
-            font-size: 1em; /* Adjust emoji size */
-            color: initial; /* Ensure natural emoji colors */
+        .right-header a.interests:hover {
+            background-color: #a855f7;
+        }
+
+        .right-header .icon {
+            font-size: 1em;
+            color: initial;
         }
 
         /* Main Content */
@@ -85,151 +112,58 @@
             flex: 1;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             padding: 20px;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             width: 100%;
-            max-width: 900px;
-        }
-
-        .left-section {
-            flex: 1;
-            padding-right: 20px;
-        }
-
-        .left-section h1 {
-            font-size: 3em;
-            color: #a855f7;
-            margin-bottom: 10px;
-        }
-
-        .left-section p {
-            font-size: 1em;
-            color: #ccc;
-            line-height: 1.5;
-        }
-
-        .social-buttons {
-            margin-top: 20px;
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-buttons a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            background-color: #a855f7;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .social-buttons a:hover {
-            background-color: #7e3af2;
-        }
-
-        .social-buttons i {
-            color: #fff;
-            font-size: 1.5em;
-        }
-
-        .contact-form {
-            flex: 1;
-            background-color: #2a2a2a;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 5px;
-            color: #fff;
-            font-size: 1em;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #3a3a3a;
-            color: #ccc;
-            font-size: 1em;
-        }
-
-        .contact-form textarea {
-            height: 100px;
-            resize: none;
-        }
-
-        .contact-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #a855f7;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #7e3af2;
         }
 
         /* Footer */
-        footer {
+        .footer-card {
             background-color: #1a1a1a;
             padding: 10px;
             text-align: center;
+            width: 100%;
         }
 
-        .copyright {
+        .footer-card p {
             font-size: 0.9em;
             color: #fff;
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header-card">
-            <div class="left-header">
-                <a href="index.html">
-                    <h2>
-                        <span class="icon">💻</span> ALI <span class="icon">🇰🇬</span>
-                    </h2>
-                </a>
-                <button id="theme-toggle" class="theme-toggle">🌙</button>
+    <div class="container">
+        <!-- Header -->
+        <header class="header-card">
+            <div class="header-content">
+                <div class="left-header">
+                    <a href="index.html">
+                        <h2>
+                            <span class="icon">💻</span> Ali <span class="icon">🇰🇬</span>
+                        </h2>
+                    </a>
+                </div>
+                <nav class="right-header">
+                    <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">
+                        <span class="icon">📄</span> Resume
+                    </a>
+                    <a href="interests.html" class="interests">
+                        <span class="icon">🌟</span> Interests
+                    </a>
+                    <a href="projects.html">
+                        <span class="icon">🚀</span> Projects
+                    </a>
+                    <a href="https://github.com/nameisalii" target="_blank">
+                        <span class="icon">🐙</span> Github
+                    </a>
+                    <a href="contact.html">
+                        <span class="icon">📧</span> Contact
+                    </a>
+                </nav>
             </div>
-            <nav class="right-header">
-                <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">
-                    <span class="icon">📄</span> Resume
-                </a>
-                <a href="interests.html">
-                    <span class="icon">🌟</span> Interests
-                </a>
-                <a href="projects.html">
-                    <span class="icon">🚀</span> Projects
-                </a>
-                <a href="https://github.com/nameisalii" target="_blank">
-                    <span class="icon">🐙</span> Github
-                </a>
-                <a href="contact.html">
-                    <span class="icon">📧</span> Contact
-                </a>
-            </nav>
-    </header>
+        </header>
     
 
     <!-- Main Content -->
