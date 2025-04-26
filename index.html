@@ -218,8 +218,8 @@
         }
 
         .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex; /* Changed to flex for single-column layout */
+            flex-direction: column; /* Stack projects vertically */
             gap: 20px;
         }
 
@@ -227,7 +227,7 @@
             background-color: #2a2a2a;
             padding: 20px;
             border-radius: 10px;
-            display: flex; /* Two-column layout */
+            display: flex;
             gap: 20px;
             align-items: center;
         }
@@ -241,7 +241,7 @@
         }
 
         .project-card h2 {
-            font-size: 2em; /* Larger title */
+            font-size: 2em;
             font-weight: 600;
             margin-bottom: 10px;
         }
@@ -258,12 +258,12 @@
         }
 
         .project-card .highlight {
-            color: #f28c38; /* Orange highlight for specific words */
+            color: #f28c38;
         }
 
         .project-card img {
             width: 100%;
-            max-width: 200px; /* Smaller image to fit the right column */
+            max-width: 200px;
             height: auto;
             border-radius: 5px;
         }
