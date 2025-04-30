@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interests - Mukhammadzhon (ALI)</title>
+    <title>Interests - Mukhammadzhon (Ali)</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
@@ -33,20 +33,6 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            margin-left: 10px;
-            color: #fff;
-        }
-
-        body.light-mode .theme-toggle {
-            color: #333;
         }
 
         /* Header */
@@ -150,6 +136,50 @@
             width: 100%;
         }
 
+        /* Intro Section */
+        .intro-card {
+            text-align: left;
+            margin-bottom: 60px;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        .intro-card h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .intro-card p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+            color: #fff;
+            line-height: 1.5;
+            margin: 10px 0 0;
+        }
+
+        body.light-mode .intro-card p {
+            color: #a855f7;
+        }
+
+        .intro-photo {
+            flex: 0 0 auto;
+        }
+
+        .intro-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #a855f7;
+            object-fit: cover;
+        }
+
         /* Interests Section */
         .interests {
             margin-top: 40px;
@@ -165,7 +195,7 @@
             text-transform: uppercase;
             margin-bottom: 20px;
             border-bottom: 2px solid #a855f7;
-            width: 100%;
+            display: inline-block; /* Underline only as wide as the text */
         }
 
         body.light-mode .interests h1 {
@@ -277,7 +307,6 @@
                             <span class="icon">💻</span> Ali <span class="icon">🇰🇬</span>
                         </h2>
                     </a>
-                    <button id="theme-toggle" class="theme-toggle">🌙</button>
                 </div>
                 <nav class="right-header">
                     <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">
@@ -301,6 +330,19 @@
 
         <!-- Main Content -->
         <div class="main-content">
+            <!-- Intro Section -->
+            <section class="intro-card">
+                <div class="intro-text">
+                    <h1>Ali Sirozhdinov | Personal Blog</h1>
+                    <p>
+                        Welcome to my personal blog. Here I share my stories and ideas with the world. I am very passionate about programming and design. Currently, I am a Computer Science student at Bellevue College
+                    </p>
+                </div>
+                <div class="intro-photo">
+                    <img src="https://via.placeholder.com/150?text=Photo" alt="Zhanar Osmonaliev">
+                </div>
+            </section>
+
             <!-- Interests Section -->
             <section class="interests">
                 <h1>INTERESTS</h1>
@@ -374,15 +416,5 @@
             <p>© 2025 Mukhammadzhon (ALI)</p>
         </footer>
     </div>
-
-    <script>
-        // Theme Toggle Functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            const isLightMode = document.body.classList.contains('light-mode');
-            themeToggle.textContent = isLightMode ? '🌞' : '🌙';
-        });
-    </script>
 </body>
 </html>
