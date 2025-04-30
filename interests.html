@@ -15,11 +15,6 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        body.light-mode {
-            background-color: #f5f5f5;
-            color: #333;
         }
 
         /* Container */
@@ -32,19 +27,6 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-        }
-        
-        .theme-toggle {
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            margin-left: 10px;
-            color: #fff;
-        }
-
-        body.light-mode .theme-toggle {
-            color: #333;
         }
 
         /* Header */
@@ -112,14 +94,6 @@
             background-color: #a855f7;
         }
 
-        .right-header a.interests {
-            background-color: transparent;
-        }
-
-        .right-header a.interests:hover {
-            background-color: #a855f7;
-        }
-
         .right-header .icon {
             font-size: 1em;
             color: initial;
@@ -164,10 +138,6 @@
             margin: 10px 0 0;
         }
 
-        body.light-mode .intro-card p {
-            color: #a855f7;
-        }
-
         .intro-photo {
             flex: 0 0 auto;
         }
@@ -191,16 +161,10 @@
         .interests h1 {
             font-size: 2em;
             color: #a855f7;
-            text-align: left;
-            text-transform: uppercase;
+            text-align: center;
             margin-bottom: 20px;
             border-bottom: 2px solid #a855f7;
-            display: inline-block; /* Underline only as wide as the text */
-        }
-
-        body.light-mode .interests h1 {
-            color: #7e3af2;
-            border-bottom: 2px solid #7e3af2;
+            display: inline-block;
         }
 
         .interests-grid {
@@ -213,44 +177,44 @@
             background-color: #2a2a2a;
             padding: 20px;
             border-radius: 10px;
-            text-decoration: none;
-            color: inherit;
             transition: transform 0.3s ease;
+            text-decoration: none; /* Remove default underline from <a> */
         }
 
         .interest-card:hover {
             transform: scale(1.05);
         }
 
-        body.light-mode .interest-card {
-            background-color: #e6e6e6;
+        .interest-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
         }
 
         .interest-card-content {
-            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category {
+            font-size: 0.9em;
+            color: #f28c38;
+            margin-bottom: 5px;
         }
 
         .interest-card h2 {
             font-size: 1.5em;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin: 0 0 5px;
+            color: #fff; /* Explicitly set to white */
         }
 
-        .interest-card .category {
-            font-size: 0.9em;
-            color: #f28c38;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .interest-card .date {
+        .date {
             font-size: 0.9em;
             color: #ccc;
             margin-bottom: 10px;
-        }
-
-        body.light-mode .interest-card .date {
-            color: #555;
         }
 
         .interest-card p {
@@ -258,19 +222,6 @@
             color: #ccc;
             line-height: 1.5;
             margin: 0;
-        }
-
-        body.light-mode .interest-card p {
-            color: #555;
-        }
-
-        .interest-card img {
-            width: 100%;
-            max-width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 10px;
         }
 
         /* Footer */
@@ -281,18 +232,10 @@
             width: 100%;
         }
 
-        body.light-mode .footer-card {
-            background-color: #f5f5f5;
-        }
-
         .footer-card p {
             font-size: 0.9em;
             color: #fff;
             margin: 0;
-        }
-
-        body.light-mode .footer-card p {
-            color: #333;
         }
     </style>
 </head>
@@ -312,7 +255,7 @@
                     <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">
                         <span class="icon">📄</span> Resume
                     </a>
-                    <a href="interests.html" class="interests">
+                    <a href="interests.html">
                         <span class="icon">🌟</span> Interests
                     </a>
                     <a href="projects.html">
@@ -335,11 +278,11 @@
                 <div class="intro-text">
                     <h1>Ali Sirozhdinov | Personal Blog</h1>
                     <p>
-                        Welcome to my personal blog. Here I share my stories and ideas with the world. I am very passionate about programming and design. Currently, I am a Computer Science student at Bellevue College
+                        Welcome to my personal blog. Here I share my stories and ideas with the world. I am very passionate about programming and design. Currently, I am a Computer Science student at Bellevue College.
                     </p>
                 </div>
                 <div class="intro-photo">
-                    <img src="https://via.placeholder.com/150?text=Photo" alt="Zhanar Osmonaliev">
+                    <img src="https://via.placeholder.com/150?text=Photo" alt="Ali Sirozhdinov">
                 </div>
             </section>
 
@@ -349,7 +292,6 @@
                 <div class="interests-grid">
                     <!-- Blog Personal -->
                     <a href="blog-personal.html" class="interest-card">
-                        <img src="https://via.placeholder.com/300x150?text=Blog+Personal" alt="Blog Personal">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Blog Personal</h2>
@@ -359,7 +301,6 @@
                     </a>
                     <!-- Books -->
                     <a href="books.html" class="interest-card">
-                        <img src="https://via.placeholder.com/300x150?text=Books" alt="Books">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Books</h2>
@@ -369,7 +310,6 @@
                     </a>
                     <!-- Podcasts -->
                     <a href="podcasts.html" class="interest-card">
-                        <img src="https://via.placeholder.com/300x150?text=Podcasts" alt="Podcasts">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Podcasts</h2>
@@ -379,7 +319,6 @@
                     </a>
                     <!-- Movies -->
                     <a href="movies.html" class="interest-card">
-                        <img src="https://via.placeholder.com/300x150?text=Movies" alt="Movies">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Movies</h2>
@@ -389,17 +328,16 @@
                     </a>
                     <!-- Places -->
                     <a href="places.html" class="interest-card">
-                        <img src="https://via.placeholder.com/300x150?text=Places" alt="Places">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Mouse">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Places</h2>
                             <div class="date">April 29, 2025</div>
-                            <p>Favorite destinations I’ve visited or want to explore.</p>
+                            <p>Favorite destinations I've visited or want to explore.</p>
                         </div>
                     </a>
                     <!-- Sports -->
                     <a href="sports.html" class="interest-card">
-                        <img src="https://via.placeholder.com/300x150?text=Sports" alt="Sports">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Sports</h2>
