@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Mukhammadzhon (ALI)</title>
+    <title>Interests - Mukhammadzhon (ALI)</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
@@ -15,6 +15,12 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #333;
         }
 
         /* Container */
@@ -27,6 +33,20 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-left: 10px;
+            color: #fff;
+        }
+
+        body.light-mode .theme-toggle {
+            color: #333;
         }
 
         /* Header */
@@ -42,12 +62,20 @@
             margin-bottom: 40px;
         }
 
+        body.light-mode .header-card {
+            background-color: #f5f5f5;
+        }
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
             box-sizing: border-box;
+        }
+
+        body.light-mode .header-content {
+            box-shadow: none;
         }
 
         .left-header {
@@ -58,6 +86,10 @@
         .left-header a {
             text-decoration: none;
             color: #fff;
+        }
+
+        body.light-mode .left-header a {
+            color: #333;
         }
 
         .left-header h2 {
@@ -90,16 +122,24 @@
             transition: background-color 0.3s ease;
         }
 
+        body.light-mode .right-header a {
+            color: #333;
+        }
+
         .right-header a:hover {
             background-color: #a855f7;
         }
 
-        .right-header a.interests {
-            background-color: transparent;
+        body.light-mode .right-header a:hover {
+            background-color: #e0b7ff;
         }
 
-        .right-header a.interests:hover {
+        .right-header a.interests {
             background-color: #a855f7;
+        }
+
+        body.light-mode .right-header a.interests {
+            background-color: #e0b7ff;
         }
 
         .right-header .icon {
@@ -118,6 +158,99 @@
             width: 100%;
         }
 
+        /* Interests Section */
+        .interests {
+            margin-top: 40px;
+            margin-bottom: 60px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .interests h1 {
+            font-size: 2em;
+            color: #a855f7;
+            text-align: left;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #a855f7;
+            width: 100%;
+        }
+
+        body.light-mode .interests h1 {
+            color: #7e3af2;
+            border-bottom: 2px solid #7e3af2;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .interest-card {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .interest-card:hover {
+            transform: scale(1.05);
+        }
+
+        body.light-mode .interest-card {
+            background-color: #e6e6e6;
+        }
+
+        .interest-card-content {
+            flex: 1;
+        }
+
+        .interest-card h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .interest-card .category {
+            font-size: 0.9em;
+            color: #f28c38;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .interest-card .date {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        body.light-mode .interest-card .date {
+            color: #555;
+        }
+
+        .interest-card p {
+            font-size: 1em;
+            color: #ccc;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        body.light-mode .interest-card p {
+            color: #555;
+        }
+
+        .interest-card img {
+            width: 100%;
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
         /* Footer */
         .footer-card {
             background-color: #1a1a1a;
@@ -126,10 +259,18 @@
             width: 100%;
         }
 
+        body.light-mode .footer-card {
+            background-color: #f5f5f5;
+        }
+
         .footer-card p {
             font-size: 0.9em;
             color: #fff;
             margin: 0;
+        }
+
+        body.light-mode .footer-card p {
+            color: #333;
         }
     </style>
 </head>
@@ -144,6 +285,7 @@
                             <span class="icon">💻</span> Ali <span class="icon">🇰🇬</span>
                         </h2>
                     </a>
+                    <button id="theme-toggle" class="theme-toggle">🌙</button>
                 </div>
                 <nav class="right-header">
                     <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">
@@ -165,71 +307,90 @@
             </div>
         </header>
 
-
-        <section class="interests">
-            <h1>Interests</h1>
-            <p>Welcome to my page where you will learn about my interests:</p>
-
-            <div class="interest-grid">
-                <div class="interest-item">
-                    <h3>My Blogging Text</h3>
-                    <p>Instagram, LinkedIn, YouTube</p>
-                    <img src="blogging.jpg" alt="Blogging Media">
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Interests Section -->
+            <section class="interests">
+                <h1>INTERESTS</h1>
+                <div class="interests-grid">
+                    <!-- Blog Personal -->
+                    <a href="blog-personal.html" class="interest-card">
+                        <img src="https://via.placeholder.com/300x150?text=Blog+Personal" alt="Blog Personal">
+                        <div class="interest-card-content">
+                            <div class="category">PERSONAL</div>
+                            <h2>Blog Personal</h2>
+                            <div class="date">April 29, 2025</div>
+                            <p>My blogging pages on YouTube and Telegram.</p>
+                        </div>
+                    </a>
+                    <!-- Books -->
+                    <a href="books.html" class="interest-card">
+                        <img src="https://via.placeholder.com/300x150?text=Books" alt="Books">
+                        <div class="interest-card-content">
+                            <div class="category">PERSONAL</div>
+                            <h2>Books</h2>
+                            <div class="date">April 29, 2025</div>
+                            <p>My favorite books and reading recommendations.</p>
+                        </div>
+                    </a>
+                    <!-- Podcasts -->
+                    <a href="podcasts.html" class="interest-card">
+                        <img src="https://via.placeholder.com/300x150?text=Podcasts" alt="Podcasts">
+                        <div class="interest-card-content">
+                            <div class="category">PERSONAL</div>
+                            <h2>Podcasts</h2>
+                            <div class="date">April 29, 2025</div>
+                            <p>Podcasts I enjoy listening to regularly.</p>
+                        </div>
+                    </a>
+                    <!-- Movies -->
+                    <a href="movies.html" class="interest-card">
+                        <img src="https://via.placeholder.com/300x150?text=Movies" alt="Movies">
+                        <div class="interest-card-content">
+                            <div class="category">PERSONAL</div>
+                            <h2>Movies</h2>
+                            <div class="date">April 29, 2025</div>
+                            <p>My top movie picks and reviews.</p>
+                        </div>
+                    </a>
+                    <!-- Places -->
+                    <a href="places.html" class="interest-card">
+                        <img src="https://via.placeholder.com/300x150?text=Places" alt="Places">
+                        <div class="interest-card-content">
+                            <div class="category">PERSONAL</div>
+                            <h2>Places</h2>
+                            <div class="date">April 29, 2025</div>
+                            <p>Favorite destinations I’ve visited or want to explore.</p>
+                        </div>
+                    </a>
+                    <!-- Sports -->
+                    <a href="sports.html" class="interest-card">
+                        <img src="https://via.placeholder.com/300x150?text=Sports" alt="Sports">
+                        <div class="interest-card-content">
+                            <div class="category">PERSONAL</div>
+                            <h2>Sports</h2>
+                            <div class="date">April 29, 2025</div>
+                            <p>Sports I love to play or watch.</p>
+                        </div>
+                    </a>
                 </div>
+            </section>
+        </div>
 
-                <div class="interest-item">
-                    <h3>Sport</h3>
-                    <p>Soccer, boxing, basketball, grappling, gym</p>
-                </div>
-
-                <div class="interest-item">
-                    <h3>Photos</h3>
-                    <p>Some photos from nature</p>
-                    <img src="nature1.jpg" alt="Nature Photo 1">
-                    <img src="nature2.jpg" alt="Nature Photo 2">
-                </div>
-
-                <div class="interest-item">
-                    <h3>Books I Read</h3>
-                    <p>Details about books (redirect to another page for more details).</p>
-                </div>
-
-                <div class="interest-item">
-                    <h3>Podcasts</h3>
-                    <p>Details about podcasts (redirect to another page).</p>
-                </div>
-
-                <div class="interest-item">
-                    <h3>Movies</h3>
-                    <p>Details about movies (YouTube videos).</p>
-                </div>
-
-                <div class="interest-item">
-                    <h3>What I Listen To</h3>
-                    <p>Some YouTube videos about my music taste.</p>
-                </div>
-
-                <div class="interest-item">
-                    <h3>Cook</h3>
-                    <p>My favorite foods.</p>
-                </div>
-
-                <div class="interest-item">
-                    <h3>My Coding Journey Timeline</h3>
-                    <p>A unique timeline of my coding journey:</p>
-                    <ul>
-                        <li><strong>2018:</strong> Wrote my first "Hello World" in Python, inspired by a school project.</li>
-                        <li><strong>2020:</strong> Built my first ML model to classify flowers, sparking my love for data science.</li>
-                        <li><strong>2022:</strong> Interned at Yandex, where I learned to tackle real-world problems with code.</li>
-                        <li><strong>2024:</strong> Ranked in the top 200 on Kaggle with my podcast prediction model.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-         <footer class="footer-card">
+        <!-- Footer -->
+        <footer class="footer-card">
             <p>© 2025 Mukhammadzhon (ALI)</p>
         </footer>
     </div>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLightMode = document.body.classList.contains('light-mode');
+            themeToggle.textContent = isLightMode ? '🌞' : '🌙';
+        });
+    </script>
 </body>
 </html>
