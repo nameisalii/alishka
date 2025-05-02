@@ -499,7 +499,7 @@
                         </div>
                     </a>
                     <!-- Books -->
-                    <div class="interest-card" data-id="books">
+                    <a href="books.html" class="interest-card">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Books">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
@@ -507,9 +507,9 @@
                             <div class="date">April 29, 2025</div>
                             <p>My favorite books and reading recommendations.</p>
                         </div>
-                    </div>
+                    </a>
                     <!-- Podcasts -->
-                    <div class="interest-card" data-id="podcasts">
+                    <a href="podcasts.html" class="interest-card">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Podcasts">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
@@ -517,7 +517,7 @@
                             <div class="date">April 29, 2025</div>
                             <p>Podcasts I enjoy listening to regularly.</p>
                         </div>
-                    </div>
+                    </a>
                     <!-- Movies -->
                     <div class="interest-card" data-id="movies">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Movies">
@@ -581,22 +581,6 @@
 
         // Data for each interest's detailed view
         const interestData = {
-            'books': {
-                title: 'Books',
-                category: 'PERSONAL',
-                authorDate: 'Ali Sirozhdinov, April 29, 2025',
-                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80',
-                idea: 'Books have always been a source of inspiration for me. I wanted to share my favorite reads to help others discover stories and knowledge that have shaped my thinking.',
-                development: 'I compiled a list of books across genres like technology, sci-fi, and self-improvement. My recommendations are based on personal impact, and I update the list regularly as I discover new titles.'
-            },
-            'podcasts': {
-                title: 'Podcasts',
-                category: 'PERSONAL',
-                authorDate: 'Ali Sirozhdinov, April 29, 2025',
-                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80',
-                idea: 'Podcasts are a great way to learn on the go. I wanted to share the ones that keep me motivated and informed, especially in tech and entrepreneurship.',
-                development: 'I curate a list of podcasts that I listen to regularly, focusing on quality content. My favorites include shows about AI, coding, and business, which I find through platforms like Spotify and Apple Podcasts.'
-            },
             'movies': {
                 title: 'Movies',
                 category: 'PERSONAL',
@@ -629,7 +613,7 @@
             if (!card) return;
 
             const id = card.dataset.id;
-            if (!id) return; // Skip if it's the Blog Personal card
+            if (!id) return; // Skip if it's a card with an href (Blog Personal, Books, Podcasts)
 
             const data = interestData[id];
 
