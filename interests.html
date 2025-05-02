@@ -246,7 +246,7 @@
             padding: 20px;
             border-radius: 10px;
             transition: transform 0.3s ease;
-            cursor: pointer;
+            text-decoration: none;
         }
 
         body.light-mode .interest-card {
@@ -489,7 +489,7 @@
                 <h1>INTERESTS</h1>
                 <div class="interests-grid" id="interests-grid">
                     <!-- Blog Personal -->
-                    <div class="interest-card" data-id="blog-personal">
+                    <a href="blog-personal.html" class="interest-card">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Blog Personal">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
@@ -497,7 +497,7 @@
                             <div class="date">April 29, 2025</div>
                             <p>My blogging pages on YouTube and Telegram.</p>
                         </div>
-                    </div>
+                    </a>
                     <!-- Books -->
                     <div class="interest-card" data-id="books">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Books">
@@ -581,14 +581,6 @@
 
         // Data for each interest's detailed view
         const interestData = {
-            'blog-personal': {
-                title: 'Blog Personal',
-                category: 'PERSONAL',
-                authorDate: 'Ali Sirozhdinov, April 29, 2025',
-                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80',
-                idea: 'I started blogging to share my thoughts and experiences with a wider audience. My YouTube and Telegram channels focus on topics like programming, design, and personal growth, aiming to inspire and educate my community.',
-                development: 'Creating content for YouTube and Telegram has taught me a lot about communication and consistency. I use tools like Canva for visuals and OBS for recording, ensuring my content is engaging and accessible.'
-            },
             'books': {
                 title: 'Books',
                 category: 'PERSONAL',
@@ -637,6 +629,8 @@
             if (!card) return;
 
             const id = card.dataset.id;
+            if (!id) return; // Skip if it's the Blog Personal card
+
             const data = interestData[id];
 
             if (data) {
