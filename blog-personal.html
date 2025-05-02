@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Personal - Mukhammadzhon (Ali)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Container */
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-left: 10px;
+            color: #fff;
+        }
+
+        body.light-mode .theme-toggle {
+            color: #333;
+        }
+
+        /* Header */
+        .header-card {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+
+        body.light-mode .header-card {
+            background-color: #f5f5f5;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        body.light-mode .header-content {
+            box-shadow: none;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .left-header a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        body.light-mode .left-header a {
+            color: #333;
+        }
+
+        .left-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .left-header .icon {
+            font-size: 1em;
+            color: initial;
+        }
+
+        .right-header {
+            display: flex;
+            gap: 20px;
+        }
+
+        .right-header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        body.light-mode .right-header a {
+            color: #333;
+        }
+
+        .right-header a:hover {
+            background-color: #a855f7;
+        }
+
+        body.light-mode .right-header a:hover {
+            background-color: #e0b7ff;
+        }
+
+        .right-header a.interests {
+            background-color: transparent;
+        }
+
+        body.light-mode .right-header a.interests {
+            background-color: transparent;
+        }
+
+        .right-header a.interests:hover {
+            background-color: #a855f7;
+        }
+
+        body.light-mode .right-header a.interests:hover {
+            background-color: #e0b7ff;
+        }
+
+        .right-header .icon {
+            font-size: 1em;
+            color: initial;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .blog-section {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-section h1 {
+            font-size: 2em;
+            color: #a855f7;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #a855f7;
+            display: inline-block;
+        }
+
+        body.light-mode .blog-section h1 {
+            color: #7e3af2;
+            border-bottom: 2px solid #7e3af2;
+        }
+
+        .platform {
+            margin-bottom: 40px;
+        }
+
+        .platform-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .platform-header h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin: 0;
+            color: #fff;
+        }
+
+        body.light-mode .platform-header h2 {
+            color: #333;
+        }
+
+        .platform-header .icon {
+            font-size: 1.5em;
+        }
+
+        .platform p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9em;
+            color: #ccc;
+            line-height: 1.5;
+            margin: 0 0 15px;
+        }
+
+        body.light-mode .platform p {
+            color: #666;
+        }
+
+        .platform iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .quote-box {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #a855f7;
+            margin-bottom: 15px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        body.light-mode .quote-box {
+            background-color: #e6e6e6;
+            border-left: 4px solid #7e3af2;
+        }
+
+        .quote-box:hover {
+            background-color: #3a3a3a;
+        }
+
+        body.light-mode .quote-box:hover {
+            background-color: #d6d6d6;
+        }
+
+        .quote-box p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+            color: #ccc;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        body.light-mode .quote-box p {
+            color: #666;
+        }
+
+        .instagram-post {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .instagram-post a {
+            color: #a855f7;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        body.light-mode .instagram-post a {
+            color: #7e3af2;
+        }
+
+        .instagram-post a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer-card {
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        body.light-mode .footer-card {
+            background-color: #f5f5f5;
+        }
+
+        .footer-card p {
+            font-size: 0.9em;
+            color: #fff;
+            margin: 0;
+        }
+
+        body.light-mode .footer-card p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header-card">
+            <div class="header-content">
+                <div class="left-header">
+                    <a href="index.html">
+                        <h2>
+                            <span class="icon">💻</span> Ali <span class="icon">🇰🇬</span>
+                        </h2>
+                    </a>
+                    <button id="theme-toggle" class="theme-toggle">🌙</button>
+                </div>
+                <nav class="right-header">
+                    <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">
+                        <span class="icon">📄</span> Resume
+                    </a>
+                    <a href="interests.html">
+                        <span class="icon">🌟</span> Interests
+                    </a>
+                    <a href="projects.html">
+                        <span class="icon">🚀</span> Projects
+                    </a>
+                    <a href="https://github.com/nameisalii" target="_blank">
+                        <span class="icon">🐙</span> Github
+                    </a>
+                    <a href="contact.html">
+                        <span class="icon">📧</span> Contact
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <section class="blog-section">
+                <h1>Blog Personal</h1>
+                <!-- YouTube Section -->
+                <div class="platform">
+                    <div class="platform-header">
+                        <span class="icon">📺</span>
+                        <h2>YouTube</h2>
+                    </div>
+                    <p>
+                        I have been thinking about starting a YouTube channel for a long time, and I think I will start it in the coming days. I already have everything I need for it. I have recorded my first podcast, and in the following weeks, I plan to continue and post several podcasts featuring different engineers from big tech companies.
+                    </p>
+                    <iframe src="https://www.youtube.com/embed/1eSzcBPvsd0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <!-- Telegram Section -->
+                <div class="platform">
+                    <div class="platform-header">
+                        <span class="icon">📬</span>
+                        <h2>Telegram Channel</h2>
+                    </div>
+                    <p>
+                        The main place where I share my notes, ideas, and advice. I share everything that happens in my life. It's a more cozy and interesting place. My Telegram channel serves as my digital journal where followers get exclusive insights into my daily thoughts, career journey, and personal development tips that I don't share anywhere else.
+                    </p>
+                    <a href="https://t.me/nameisalims_org" class="quote-box">
+                        <p>
+                            Ошибка, которая делает тебя скромным, лучше, чем достижения, которое делает тебя высокомерным.
+                        </p>
+                        <p>
+                            Мы всегда хотим побеждать, чтобы всё у нас получалось, и просим Аллаха исполнить наши мечты и планы. При этом мы жалуемся на провалы и проблемы. Но иногда стоит задать себе вопрос: «Почему это случилось со мной и чему Аллах хочет меня научить через это?» Такой подход может решить многие проблемы.
+                        </p>
+                        <p>
+                            Раньше, когда я чего-то добивался, я сильно радовался и порой думал: «Я круче других 😏», становясь высокомерным. Но вскоре это как будто уходило от меня и никакой радости уже не было. Теперь я стараюсь относиться ко всему почти одинаково и НИКОГДА не позволяю себе думать: «Я лучше кого-то».
+                        </p>
+                    </a>
+                </div>
+                <!-- Instagram Section -->
+                <div class="platform">
+                    <div class="platform-header">
+                        <span class="icon">📸</span>
+                        <h2>Instagram</h2>
+                    </div>
+                    <p>
+                        Where I am a star (haha). I love Instagram. I have a good algorithm where I see reels or people who I like or who bring good emotions. My Instagram showcases the more visual aspects of my journey, featuring highlights from my professional life, networking events, and occasional glimpses into my personal interests and activities.
+                    </p>
+                    <div class="instagram-post">
+                        <a href="https://www.instagram.com/reel/DITCToGR83t/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">View my latest Instagram Reel</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer-card">
+            <p>© 2025 Mukhammadzhon (ALI)</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLightMode = document.body.classList.contains('light-mode');
+            themeToggle.textContent = isLightMode ? '🌞' : '🌙';
+        });
+    </script>
+</body>
+</html>
