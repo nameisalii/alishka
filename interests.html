@@ -15,6 +15,12 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #333;
         }
 
         /* Container */
@@ -148,7 +154,6 @@
             color: initial;
         }
 
-       
         /* Main Content */
         .main-content {
             flex: 1;
@@ -188,6 +193,10 @@
             margin: 10px 0 0;
         }
 
+        body.light-mode .intro-card p {
+            color: #333;
+        }
+
         .intro-photo {
             flex: 0 0 auto;
         }
@@ -198,6 +207,10 @@
             border-radius: 50%;
             border: 4px solid #a855f7;
             object-fit: cover;
+        }
+
+        body.light-mode .intro-section-photo img {
+            border-color: #7e3af2;
         }
 
         /* Interests Section */
@@ -217,6 +230,11 @@
             display: inline-block;
         }
 
+        body.light-mode .interests h1 {
+            color: #7e3af2;
+            border-bottom: 2px solid #7e3af2;
+        }
+
         .interests-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -228,7 +246,11 @@
             padding: 20px;
             border-radius: 10px;
             transition: transform 0.3s ease;
-            text-decoration: none; /* Remove default underline from <a> */
+            cursor: pointer;
+        }
+
+        body.light-mode .interest-card {
+            background-color: #e6e6e6;
         }
 
         .interest-card:hover {
@@ -252,13 +274,18 @@
             font-size: 0.9em;
             color: #f28c38;
             margin-bottom: 5px;
+            text-transform: uppercase;
         }
 
         .interest-card h2 {
             font-size: 1.5em;
             font-weight: 600;
             margin: 0 0 5px;
-            color: #fff; /* Explicitly set to white */
+            color: #fff;
+        }
+
+        body.light-mode .interest-card h2 {
+            color: #333;
         }
 
         .date {
@@ -267,11 +294,123 @@
             margin-bottom: 10px;
         }
 
+        body.light-mode .date {
+            color: #666;
+        }
+
         .interest-card p {
             font-size: 1em;
             color: #ccc;
             line-height: 1.5;
             margin: 0;
+        }
+
+        body.light-mode .interest-card p {
+            color: #666;
+        }
+
+        /* Detailed View */
+        .interest-detail {
+            display: none;
+            background-color: #2f2f2f;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        body.light-mode .interest-detail {
+            background-color: #e6e6e6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .interest-detail-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .interest-detail .category {
+            font-size: 0.9em;
+            color: #f28c38;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .interest-detail .author-date {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        body.light-mode .interest-detail .author-date {
+            color: #666;
+        }
+
+        .interest-detail h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin: 0 0 10px;
+            color: #fff;
+        }
+
+        body.light-mode .interest-detail h2 {
+            color: #333;
+        }
+
+        .interest-detail img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .interest-detail h3 {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 15px 0 5px;
+            color: #fff;
+        }
+
+        body.light-mode .interest-detail h3 {
+            color: #333;
+        }
+
+        .interest-detail p {
+            font-size: 1em;
+            color: #ccc;
+            line-height: 1.5;
+            margin: 0 0 15px;
+        }
+
+        body.light-mode .interest-detail p {
+            color: #666;
+        }
+
+        .return-button {
+            background-color: #a855f7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            align-self: center;
+        }
+
+        body.light-mode .return-button {
+            background-color: #7e3af2;
+        }
+
+        .return-button:hover {
+            background-color: #e0b7ff;
+        }
+
+        body.light-mode .return-button:hover {
+            background-color: #a855f7;
         }
 
         /* Footer */
@@ -308,6 +447,7 @@
                             <span class="icon">💻</span> Ali <span class="icon">🇰🇬</span>
                         </h2>
                     </a>
+                    <button id="theme-toggle" class="theme-toggle">🌙</button>
                 </div>
                 <nav class="right-header">
                     <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">
@@ -347,72 +487,79 @@
             <!-- Interests Section -->
             <section class="interests">
                 <h1>INTERESTS</h1>
-                <div class="interests-grid">
+                <div class="interests-grid" id="interests-grid">
                     <!-- Blog Personal -->
-                    <a href="blog-personal.html" class="interest-card">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Mouse">
+                    <div class="interest-card" data-id="blog-personal">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Blog Personal">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Blog Personal</h2>
                             <div class="date">April 29, 2025</div>
                             <p>My blogging pages on YouTube and Telegram.</p>
                         </div>
-                    </a>
+                    </div>
                     <!-- Books -->
-                    <a href="books.html" class="interest-card">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Mouse">
+                    <div class="interest-card" data-id="books">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Books">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Books</h2>
                             <div class="date">April 29, 2025</div>
                             <p>My favorite books and reading recommendations.</p>
                         </div>
-                    </a>
+                    </div>
                     <!-- Podcasts -->
-                    <a href="podcasts.html" class="interest-card">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Mouse">
+                    <div class="interest-card" data-id="podcasts">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Podcasts">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Podcasts</h2>
                             <div class="date">April 29, 2025</div>
                             <p>Podcasts I enjoy listening to regularly.</p>
                         </div>
-                    </a>
+                    </div>
                     <!-- Movies -->
-                    <a href="movies.html" class="interest-card">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Mouse">
+                    <div class="interest-card" data-id="movies">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Movies">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Movies</h2>
                             <div class="date">April 29, 2025</div>
                             <p>My top movie picks and reviews.</p>
                         </div>
-                    </a>
+                    </div>
                     <!-- Places -->
-                    <a href="places.html" class="interest-card">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Mouse">
+                    <div class="interest-card" data-id="places">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Places">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Places</h2>
                             <div class="date">April 29, 2025</div>
                             <p>Favorite destinations I've visited or want to explore.</p>
                         </div>
-                    </a>
+                    </div>
                     <!-- Sports -->
-                    <a href="sports.html" class="interest-card">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Mouse">
+                    <div class="interest-card" data-id="sports">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Sports">
                         <div class="interest-card-content">
                             <div class="category">PERSONAL</div>
                             <h2>Sports</h2>
                             <div class="date">April 29, 2025</div>
-                            <p>Sports I love to play or watch.</p> 
+                            <p>Sports I love to play or watch.</p>
                         </div>
-                    </a>
+                    </div>
+                </div>
+                <!-- Detailed View -->
+                <div class="interest-detail" id="interest-detail">
+                    <div class="interest-detail-content" id="detail-content">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                    <button class="return-button" id="return-button">Return Back</button>
                 </div>
             </section>
         </div>
 
-       <footer class="footer-card">
+        <footer class="footer-card">
             <p>© 2025 Mukhammadzhon (ALI)</p>
         </footer>
     </div>
@@ -424,6 +571,94 @@
             document.body.classList.toggle('light-mode');
             const isLightMode = document.body.classList.contains('light-mode');
             themeToggle.textContent = isLightMode ? '🌞' : '🌙';
+        });
+
+        // Interest Detail View Functionality
+        const interestsGrid = document.getElementById('interests-grid');
+        const interestDetail = document.getElementById('interest-detail');
+        const detailContent = document.getElementById('detail-content');
+        const returnButton = document.getElementById('return-button');
+
+        // Data for each interest's detailed view
+        const interestData = {
+            'blog-personal': {
+                title: 'Blog Personal',
+                category: 'PERSONAL',
+                authorDate: 'Ali Sirozhdinov, April 29, 2025',
+                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80',
+                idea: 'I started blogging to share my thoughts and experiences with a wider audience. My YouTube and Telegram channels focus on topics like programming, design, and personal growth, aiming to inspire and educate my community.',
+                development: 'Creating content for YouTube and Telegram has taught me a lot about communication and consistency. I use tools like Canva for visuals and OBS for recording, ensuring my content is engaging and accessible.'
+            },
+            'books': {
+                title: 'Books',
+                category: 'PERSONAL',
+                authorDate: 'Ali Sirozhdinov, April 29, 2025',
+                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80',
+                idea: 'Books have always been a source of inspiration for me. I wanted to share my favorite reads to help others discover stories and knowledge that have shaped my thinking.',
+                development: 'I compiled a list of books across genres like technology, sci-fi, and self-improvement. My recommendations are based on personal impact, and I update the list regularly as I discover new titles.'
+            },
+            'podcasts': {
+                title: 'Podcasts',
+                category: 'PERSONAL',
+                authorDate: 'Ali Sirozhdinov, April 29, 2025',
+                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80',
+                idea: 'Podcasts are a great way to learn on the go. I wanted to share the ones that keep me motivated and informed, especially in tech and entrepreneurship.',
+                development: 'I curate a list of podcasts that I listen to regularly, focusing on quality content. My favorites include shows about AI, coding, and business, which I find through platforms like Spotify and Apple Podcasts.'
+            },
+            'movies': {
+                title: 'Movies',
+                category: 'PERSONAL',
+                authorDate: 'Ali Sirozhdinov, April 29, 2025',
+                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80',
+                idea: 'Movies inspire me through their storytelling and visuals. I wanted to share my top picks to help others find films that are both entertaining and thought-provoking.',
+                development: 'I created a list of my favorite movies, ranging from sci-fi to drama. Each recommendation includes a brief review, and I often update it based on new releases or rediscovered classics.'
+            },
+            'places': {
+                title: 'Places',
+                category: 'PERSONAL',
+                authorDate: 'Ali Sirozhdinov, April 29, 2025',
+                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80',
+                idea: 'Traveling opens up new perspectives. I wanted to share my favorite destinations to inspire others to explore the world or learn about new cultures.',
+                development: 'I documented places I’ve visited or want to visit, including cities and natural landscapes. Each entry includes why the place is special to me, often with tips for future travelers.'
+            },
+            'sports': {
+                title: 'Sports',
+                category: 'PERSONAL',
+                authorDate: 'Ali Sirozhdinov, April 29, 2025',
+                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80',
+                idea: 'Sports are a big part of my life, keeping me active and engaged. I wanted to share the sports I love to encourage others to stay active or enjoy watching games.',
+                development: 'I listed sports I play, like soccer, and those I enjoy watching, like basketball. Each entry includes why I love the sport and how it impacts my life, from fitness to teamwork.'
+            }
+        };
+
+        // Show detailed view when an interest card is clicked
+        interestsGrid.addEventListener('click', (e) => {
+            const card = e.target.closest('.interest-card');
+            if (!card) return;
+
+            const id = card.dataset.id;
+            const data = interestData[id];
+
+            if (data) {
+                detailContent.innerHTML = `
+                    <div class="category">${data.category}</div>
+                    <div class="author-date">${data.authorDate}</div>
+                    <h2>${data.title}</h2>
+                    <img src="${data.image}" alt="${data.title}">
+                    <h3>Idea</h3>
+                    <p>${data.idea}</p>
+                    <h3>Development</h3>
+                    <p>${data.development}</p>
+                `;
+                interestsGrid.style.display = 'none';
+                interestDetail.style.display = 'block';
+            }
+        });
+
+        // Return to interests grid when "Return Back" is clicked
+        returnButton.addEventListener('click', () => {
+            interestDetail.style.display = 'none';
+            interestsGrid.style.display = 'grid';
         });
     </script>
 </body>
