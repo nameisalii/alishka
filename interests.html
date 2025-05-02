@@ -359,5 +359,15 @@
             <p>© 2025 Mukhammadzhon (ALI)</p>
         </footer>
     </div>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLightMode = document.body.classList.contains('light-mode');
+            themeToggle.textContent = isLightMode ? '🌞' : '🌙';
+        });
+    </script>
 </body>
 </html>
