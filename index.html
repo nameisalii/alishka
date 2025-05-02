@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mukhammadzhon (Ali) Sirozhidinov</title>
+    <title>Mukhammadzhon (Ali) Sirozhdinov</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
@@ -195,6 +195,68 @@
             color: #7e3af2;
         }
 
+        /* About Me Section */
+        .about-me {
+            margin-top: 40px;
+            margin-bottom: 60px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .about-me h2 {
+            font-size: 2em;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #fff;
+            display: inline-block;
+        }
+
+        body.light-mode .about-me h2 {
+            color: #7e3af2;
+            border-bottom: 2px solid #7e3af2;
+        }
+
+        .about-me-content {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .about-me-info {
+            flex: 1;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        body.light-mode .about-me-info {
+            background-color: #e6e6e6;
+        }
+
+        .about-me-info p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        body.light-mode .about-me-info p {
+            color: #555;
+        }
+
+        .about-me-photo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-me-photo img {
+            width: 250%;
+            max-width: 550px;
+            border-radius: 10px;
+        }
+
         /* Projects Section */
         .projects {
             margin-top: 40px;
@@ -204,11 +266,12 @@
         }
 
         .projects h1 {
-            font-size: 2em;
-            color: #fff;
+            font-size: 2.5em;
+            font-weight: 600;
+            color: #a855f7;
             text-align: center;
             margin-bottom: 20px;
-            border-bottom: 2px solid #fff;
+            border-bottom: 2px solid #a855f7;
             display: inline-block;
         }
 
@@ -218,70 +281,91 @@
         }
 
         .project-grid {
-            display: flex; /* Changed to flex for single-column layout */
-            flex-direction: column; /* Stack projects vertically */
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
 
         .project-card {
-            background-color: #2a2a2a;
+            background-color: #2f2f2f;
             padding: 20px;
-            border-radius: 10px;
-            display: flex;
-            gap: 20px;
-            align-items: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
         }
 
         body.light-mode .project-card {
             background-color: #e6e6e6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .project-card-content {
-            flex: 1;
-        }
-
-        .project-card h2 {
-            font-size: 2em;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .project-card p {
-            font-size: 1em;
-            color: #ccc;
-            line-height: 1.5;
-            margin: 5px 0;
-        }
-
-        body.light-mode .project-card p {
-            color: #555;
-        }
-
-        .project-card .highlight {
-            color: #f28c38;
+        .project-card:hover {
+            transform: translateY(-5px);
         }
 
         .project-card img {
             width: 100%;
-            max-width: 200px;
-            height: auto;
-            border-radius: 5px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .project-card-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category {
+            font-size: 0.9em;
+            color: #f28c38;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .project-card h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin: 0 0 5px;
+            color: #fff;
+        }
+
+        body.light-mode .project-card h2 {
+            color: #333;
+        }
+
+        .date {
+            font-size: 0.9em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        body.light-mode .date {
+            color: #333;
+        }
+
+        .project-card p {
+            font-size: 1em;
+            color: #fff;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        body.light-mode .project-card p {
+            color: #333;
         }
 
         .project-links {
             margin-top: 10px;
-            display: flex;
-            gap: 15px;
         }
 
         .project-links a {
             color: #a855f7;
             text-decoration: none;
-            font-size: 1em;
+            margin-right: 15px;
             display: flex;
             align-items: center;
             gap: 5px;
-            transition: color 0.3s ease;
         }
 
         body.light-mode .project-links a {
@@ -289,74 +373,9 @@
         }
 
         .project-links a:hover {
-            color: #7e3af2;
+            text-decoration: underline;
         }
 
-        body.light-mode .project-links a:hover {
-            color: #fff;
-        }
-
-        /* About Me Section */
-        .about-me {
-            margin-top: 40px;
-            margin-bottom: 60px;
-            width: 100%;
-            max-width: 1200px;
-        }
-        
-        .about-me h2 {
-            font-size: 2em;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #fff;
-            display: inline-block;
-        }
-        
-        body.light-mode .about-me h2 {
-            color: #7e3af2;
-            border-bottom: 2px solid #7e3af2;
-        }
-        
-        .about-me-content {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .about-me-info {
-            flex: 1;
-            background-color: #2a2a2a;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: left;
-        }
-        
-        body.light-mode .about-me-info {
-            background-color: #e6e6e6;
-        }
-        
-        .about-me-info p {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1em;
-            color: #ccc;
-            line-height: 1.5;
-        }
-        
-        body.light-mode .about-me-info p {
-            color: #555;
-        }
-        
-        .about-me-photo {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .about-me-photo img {
-            width: 300%;
-            max-width: 600px; /* Increased from 300px to 400px */
-            border-radius: 10px;
-        }
         /* Collapsible Sections */
         details {
             margin-bottom: 15px;
@@ -470,7 +489,7 @@
                         </p>
                     </div>
                     <div class="about-me-photo">
-                        <img src="https://github.com/nameisalii/alishka/blob/main/profile2.jpg?raw=true" alt="Mouse">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Mouse">
                     </div>
                 </div>
 
@@ -482,8 +501,6 @@
                         
                     <p> The school’s rigorous education system, where I studied for 11 years, built a strong foundation for my future.
 
-
-                        
                     <p> At 15, I moved to Bishkek, the capital city, for 2.5 years, studying at School No. 29. The move to a bigger city was a game-changer, opening up countless opportunities. In March 2022, I joined the ILGERI team, a group dedicated to promoting cultural heritage and information through modern technology in engaging ways. As a CEO and Project Manager assistant, I supported various initiatives, gaining invaluable experience. At just 16, I launched my first online clothing brand inspired by Kyrgyz culture, securing $500 in investment from Kulikov’s CEO—an exciting milestone!
 
 During my final year of high school, I began preparing applications for universities abroad. 
@@ -499,12 +516,8 @@ In 2024, I applied again and received similar results. After careful considerati
                     <p>
                         I arrived in Bellevue, USA, on August 30, 2024, to pursue my dreams. The transition was challenging at first—I struggled with homesickness and wondered if this path was right for me. However, I persevered and found an incredible group of friends who have supported me in life, education, and my career. Their encouragement helped me settle in and thrive.
 
-
-                        
                     <p> Recently, I completed Nfactorial’s six-month Data Science bootcamp, earning a gold certificate—an achievement I’m proud of. Currently, I’m focused on building machine learning models to deepen my expertise and grow as a programmer. My goal is to become an exceptional programmer, not just someone who passes interviews. At Bellevue College, I’ve maintained a 3.6 GPA while taking rigorous courses like Calculus 1–3, Linear Algebra, CS210–211, and Physics.
 
-
-                        
                     <p> Looking ahead, I’m seeking internship opportunities at Y Combinator startups or other high-growth companies with pre-seed funding of $1M or more, where I can contribute to innovative projects and continue learning.
                     </p>
                 </details>
@@ -514,12 +527,8 @@ In 2024, I applied again and received similar results. After careful considerati
                     <p>
                         My goal isn’t simply to land an IT job at a big company—that’s a milestone, not my ultimate dream. Instead, I aspire to build EdTech and FinTech startups that empower people to unlock their potential early in life. I believe everyone has unique talents, but not everyone gets the chance to discover them. I want to be the person who helps even just one individual transform their life by finding their purpose.
 
-
-                        
                     <p> By age 25, I aim to join Y Combinator, secure $10M+ in pre-seed funding for my EdTech startup, and grow it into a unicorn within three years. My EdTech platform will be an engaging website where high school students can craft their university applications while developing their personal strengths. Through interactive project-building tools, the platform will make the application process dynamic, helping students discover their talents and create impactful projects that reflect their unique “hero” journeys.
 
-
-                        
                     <p> Later in life, I envision returning to Bishkek to open a farm and café, creating a space to connect with my community. I also plan to share my knowledge and experiences on YouTube, inspiring others to pursue their dreams and make a difference.
                     </p>
                 </details>
@@ -530,28 +539,43 @@ In 2024, I applied again and received similar results. After careful considerati
                 <h1>Projects</h1>
                 <div class="project-grid">
                     <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&q=80" alt="Diamond">
                         <div class="project-card-content">
+                            <div class="category">DEVELOPMENT</div>
+                            <div class="date">March 28th</div>
                             <h2>Diamond</h2>
-                            <p>If you ever need a diamond recommendation, this <span class="highlight">Machine Learning model</span> with MSE 99% can help.</p>
-                            <p>This model suggests diamonds to Steve based on his preferences and predicts the price of the diamond.</p>
-                            <p>It was built using: <span class="highlight">Python</span>, Data Analysis, and ML.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
-                                <a href="https://jasper-impatiens-b87.notion.site/How-to-build-a-Machine-Learning-project-1949bf4bca84800e9842e592a686c7b1?pvs=4" target="_blank">Project Details</a>
-                            </div>
+                            <p>If you ever need a diamond recommendation, this Machine Learning model with MSE 99% can help. This model suggests diamonds to Steve based on his preferences and predicts the price of the diamond. It was built using Python, Data Analysis, and ML.</p>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Mouse">
+                        <div class="project-links">
+                            <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
+                            <a href="https://jasper-impatiens-b87.notion.site/How-to-build-a-Machine-Learning-project-1949bf4bca84800e9842e592a686c7b1?pvs=4" target="_blank">More info</a>
+                        </div>
                     </div>
                     <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&q=80" alt="Predict Podcast Listening Time">
                         <div class="project-card-content">
+                            <div class="category">DEVELOPMENT</div>
+                            <div class="date">April 15th</div>
                             <h2>Predict Podcast Listening Time</h2>
-                            <p>I created a <span class="highlight">ML model</span> that predicts the time spent listening to podcasts using <span class="highlight">LightGBM</span> and <span class="highlight">XGBoost</span> on Kaggle, achieving a score of 11.9 (top 200).</p>
-                            <div class="project-links">
-                                <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
-                                <a href="https://jasper-impatiens-b87.notion.site/How-to-build-a-Machine-Learning-project-1949bf4bca84800e9842e592a686c7b1?pvs=4" target="_blank">Project Details</a>
-                            </div>
+                            <p>I created a ML model that predicts the time spent listening to podcasts using LightGBM and XGBoost on Kaggle, achieving a score of 11.9 (top 200).</p>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Mouse">
+                        <div class="project-links">
+                            <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
+                            <a href="https://jasper-impatiens-b87.notion.site/How-to-build-a-Machine-Learning-project-1949bf4bca84800e9842e592a686c7b1?pvs=4" target="_blank">More info</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&q=80" alt="Credit Approve">
+                        <div class="project-card-content">
+                            <div class="category">DEVELOPMENT</div>
+                            <div class="date">February 27th</div>
+                            <h2>Credit Approve</h2>
+                            <p>That’s an impressive achievement! Building a machine learning model to predict credit approval based on customer background documents, optimized with Optuna and Random Forest, is a solid project. An accuracy of 88% is a great starting point, especially for a complex task like this.</p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nameisalii" target="_blank"><span class="icon">🐙</span> Github</a>
+                            <a href="https://jasper-impatiens-b87.notion.site/How-to-build-a-Machine-Learning-project-1949bf4bca84800e9842e592a686c7b1?pvs=4" target="_blank">More info</a>
+                        </div>
                     </div>
                 </div>
             </section>
