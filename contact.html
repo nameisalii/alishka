@@ -17,6 +17,12 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #333;
         }
 
         /* Container */
@@ -27,7 +33,7 @@
             max-width: 900px;
         }
 
-        /* Header (Taken from projects.html) */
+        /* Header (Copied from index.html) */
         .header-card {
             background-color: #1a1a1a;
             padding: 15px 20px;
@@ -37,8 +43,11 @@
             flex-wrap: wrap;
             width: 100%;
             max-width: 1200px;
-            margin: 0 auto;
             margin-bottom: 40px;
+        }
+
+        body.light-mode .header-card {
+            background-color: #f5f5f5;
         }
 
         .header-content {
@@ -49,6 +58,10 @@
             box-sizing: border-box;
         }
 
+        body.light-mode .header-content {
+            box-shadow: none;
+        }
+
         .left-header {
             display: flex;
             align-items: center;
@@ -57,6 +70,10 @@
         .left-header a {
             text-decoration: none;
             color: #fff;
+        }
+
+        body.light-mode .left-header a {
+            color: #333;
         }
 
         .left-header h2 {
@@ -74,7 +91,7 @@
 
         .right-header {
             display: flex;
-            gap: 20px; /* Updated to match projects.html and the first image */
+            gap: 20px;
         }
 
         .right-header a {
@@ -89,11 +106,23 @@
             transition: background-color 0.3s ease;
         }
 
+        body.light-mode .right-header a {
+            color: #333;
+        }
+
         .right-header a:hover {
             background-color: #a855f7;
         }
 
+        body.light-mode .right-header a:hover {
+            background-color: #e0b7ff;
+        }
+
         .right-header a.interests {
+            background-color: transparent;
+        }
+
+        body.light-mode .right-header a.interests {
             background-color: transparent;
         }
 
@@ -101,9 +130,26 @@
             background-color: #a855f7;
         }
 
+        body.light-mode .right-header a.interests:hover {
+            background-color: #e0b7ff;
+        }
+
         .right-header .icon {
             font-size: 1em;
             color: initial;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-left: 10px;
+            color: #a855f7;
+        }
+
+        body.light-mode .theme-toggle {
+            color: #333;
         }
 
         /* Main Content */
@@ -128,8 +174,12 @@
 
         .left-section p {
             font-size: 1em;
-            color: #ccc;
+            color: #ccc; /* Reverted to grey for default dark mode */
             line-height: 1.5;
+        }
+
+        body.light-mode .left-section p {
+            color: #000; /* Changed to black in light mode */
         }
 
         .social-buttons {
@@ -201,6 +251,8 @@
             font-size: 1em;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto;
         }
 
         .contact-form button:hover {
@@ -222,7 +274,7 @@
     </style>
 </head>
 <body>
-    <!-- Header (Taken from projects.html) -->
+    <!-- Header (Copied from index.html) -->
     <header class="header-card">
         <div class="header-content">
             <div class="left-header">
@@ -231,6 +283,7 @@
                         <span class="icon">💻</span> Ali <span class="icon">🇰🇬</span>
                     </h2>
                 </a>
+                <button id="theme-toggle" class="theme-toggle">🌙</button>
             </div>
             <nav class="right-header">
                 <a href="https://drive.google.com/file/d/1iwHfNLFZ0_efRHeiikwrZGdbE_vp4wII/view?usp=share_link" target="_blank">
@@ -299,5 +352,15 @@
             © 2025 Mukhammadzhon (ALI)
         </div>
     </footer>
+
+    <script>
+        // Theme Toggle Functionality (Copied from index.html)
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLightMode = document.body.classList.contains('light-mode');
+            themeToggle.textContent = isLightMode ? '🌞' : '🌙';
+        });
+    </script>
 </body>
 </html>
