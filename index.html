@@ -196,56 +196,106 @@
         }
 
         /* About Me Section */
-        .about-me-content {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            align-items: stretch; /* Ensures both text and image containers stretch to the same height */
-        }
-        
-        .about-me-info {
-            flex: 1;
-            background-color: #2a2a2a;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Centers text vertically within its container */
-        }
-        
-        body.light-mode .about-me-info {
-            background-color: #e6e6e6;
-        }
-        
-        .about-me-info p {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.1em;
-            color: #ccc;
-            line-height: 1.4;
-            margin: 0;
-        }
-        
-        body.light-mode .about-me-info p {
-            color: #555;
-        }
-        
-        .about-me-photo {
-            flex: 1;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .about-me-photo img {
+        .about-me {
+            margin-top: 40px;
+            margin-bottom: 60px;
             width: 100%;
-            max-width: 530px;
-            height: auto; /* Removes fixed max-height to avoid squeezing */
-            border-radius: 10px;
-            object-fit: contain; /* Prevents squeezing, maintains aspect ratio */
+            max-width: 1200px;
         }
 
+        .about-me h2 {
+            font-size: 2.5em;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #fff;
+            display: inline-block;
+        }
+
+        body.light-mode .about-me h2 {
+            color: #7e3af2;
+            border-bottom: 2px solid #7e3af2;
+        }
+
+        .about-me-content {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 35px;
+            display: flex;
+            align-items: stretch;
+            min-height: 500px; /* Increased from 400px to 500px to make the image taller */
+        }
+
+        body.light-mode .about-me-content {
+            background-color: #e6e6e6;
+        }
+
+        .about-me-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .about-me-text p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.3em;
+            color: #ccc;
+            line-height: 1.6;
+            margin: 0 0 20px;
+        }
+
+        body.light-mode .about-me-text p {
+            color: #555;
+        }
+
+        .about-me-photo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .about-me-photo img {
+            width: 100%;
+            height: 100%;
+            max-width: 400px;
+            object-fit: contain;
+            border-radius: 10px; /* Added rounded corners to the image */
+        }
+
+        /* Collapsible Sections */
+        details {
+            margin-top: 20px; /* Decreased from 40px to 20px to reduce gap between sections */
+            margin-bottom: 15px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        body.light-mode details {
+            background-color: #e6e6e6;
+        }
+
+        summary {
+            font-size: 1.2em;
+            color: #a855f7;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        body.light-mode summary {
+            color: #7e3af2;
+        }
+
+        details p {
+            font-size: 1em;
+            color: #ccc;
+            line-height: 1.5;
+            padding: 0 10px 10px;
+        }
+
+        body.light-mode details p {
+            color: #555;
+        }
 
         /* Projects Section */
         .projects {
@@ -366,40 +416,6 @@
             text-decoration: underline;
         }
 
-        /* Collapsible Sections */
-        details {
-            margin-bottom: 15px;
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            padding: 10px;
-        }
-
-        body.light-mode details {
-            background-color: #e6e6e6;
-        }
-
-        summary {
-            font-size: 1.2em;
-            color: #a855f7;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        body.light-mode summary {
-            color: #7e3af2;
-        }
-
-        details p {
-            font-size: 1em;
-            color: #ccc;
-            line-height: 1.5;
-            padding: 0 10px 10px;
-        }
-
-        body.light-mode details p {
-            color: #555;
-        }
-
         /* Footer */
         .footer-card {
             background-color: #1a1a1a;
@@ -471,10 +487,12 @@
                 <h2>About Me</h2>
                 <div class="about-me-content">
                     <div class="about-me-text">
-                        <p>I'm Mukhammadzhon (Ali), a passionate engineer focused on building software solutions with Machine Learning and Data Science that create meaningful impact in people's lives.<p>
-                        <p>Originally from the beautiful mountains of Kyrgyzstan, I relocated to Washington, USA in Fall 2024 to pursue my technological aspirations and embrace new opportunities in this dynamic environment. <p>
-                        <p>My vision is to develop innovative EdTech and FinTech startups that empower individuals to realize their potential while contributing positively to society. When I'm not coding, I enjoy exploring diverse cultures, reading thought-provoking books, staying active through running, and following football matches that combine strategy and teamwork—values I bring to my engineering work as well.<p>                    <div class="about-me-photo">
-                        <img src="https://github.com/nameisalii/alishka/blob/main/F3BBD9FA-2BBC-46C9-BF1E-AFAE3C81345A_1_105_c.jpeg?raw=true" alt="Mouse">
+                        <p>I’m Mukhammadzhon (Ali), a passionate engineer with a focus on Machine Learning and Data Science.</p>
+                        <p>Originally from Kyrgyzstan, I’ve recently moved to the USA to pursue my dreams in technology.</p>
+                        <p>I’m driven by a desire to create impactful EdTech and FinTech solutions that empower people to discover their potential. When I’m not coding, you can find me exploring new cultures, learning from others, or enjoying a good football match!</p>
+                    </div>
+                    <div class="about-me-photo">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=150&q=80" alt="Mouse">
                     </div>
                 </div>
 
